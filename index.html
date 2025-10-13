@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolatore Tasse</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+
+<body>
+    <a target ="_blank "href="https://www.instagram.com/associazione.sud/" id="Logo">
+        <img src="logo-sud.png" alt="Logo associazione Sud">
+    </a>
+
+    <div id="header">
+        <h1>Inserisci il tuo ISEE</h1>
+        <form id="iseeForm" onsubmit="return false;">
+            <div id="input-container">
+                <label for="reddito">ISEE:</label>
+                <input type="number" id="reddito" name="reddito" placeholder="00000" required>
+                <p>€</p>
+            </div>
+            <div id="butt">
+                <input type="button" id="calcolaBtn" value="Calcola">
+            </div> 
+        </form>
+
+        <div id="risultato" style="margin-top: 2.5vh;"></div>
+    </div>
+
+    <script>
+        function fasce(isee) {
+            let tasse = 0;
+            let risultato = 0;
+            let fascia = "";
+
+            if (isee >= 0 && isee <= 24000) {
+                fascia = "Prima fascia";
+                tasse = 0;
+            } else if (isee >= 24001 && isee <= 26000) {
+                fascia = "Seconda fascia";
+                tasse = 0;
+            } else if (isee >= 26001 && isee <= 28000) {
+                fascia = "Terza fascia";
+                tasse = 0;
+            } else if (isee >= 28001 && isee <= 30000) {
+                fascia = "Quarta fascia";
+                risultato = isee - 22000;
+                tasse = risultato * 0.05;
+            } else if (isee >= 30001 && isee <= 50000) {
+                fascia = "Quinta fascia";
+                risultato = isee - 30000;
+                tasse = risultato * 0.062 + 400;
+            } else if (isee >= 50001 && isee <= 60000) {
+                fascia = "Sesta fascia";
+                risultato = isee - 30000;
+                tasse = risultato * 0.062 + 400;
+            } else if (isee > 60000) {
+                fascia = "Settima fascia";
+                tasse = 2650;
+            } else {
+                fascia = "Valore non valido";
+            }
+
+            return { tasse, fascia };
+        }
+
+        document.getElementById("calcolaBtn").addEventListener("click", function() {
+            const isee = parseFloat(document.getElementById("reddito").value);
+            const output = document.getElementById("risultato");
+
+            if (isNaN(isee) || isee < 0) {
+                output.textContent = "⚠️ Inserisci un valore ISEE valido.";
+                output.style.color = "red";
+                return;
+            }
+
+            const { tasse, fascia } = fasce(isee);
+            output.style.color = "black";
+            output.innerHTML = `Sei in <strong>${fascia}</strong><br>Tasse dovute: <strong>${tasse.toFixed(2)}€</strong>`;
+        });
+    </script>
+</body>
+</html>
