@@ -29,8 +29,8 @@ img {
   display: block;
   margin: 5vh auto;
   width: 60%;
-  height: 26vh;
-  object-fit: contain;
+  height: auto;
+  
 }
 
 /* Tablet */
