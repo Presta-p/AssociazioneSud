@@ -26,15 +26,27 @@ body{
 }
 
 img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    height: 26vh;
-    margin: 5vh auto;
-    object-fit: contain; 
+  display: block;
+  margin: 5vh auto;
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  img {
+    width: 50%;
   }
-  
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  img {
+    width: 30%;
+  }
+}
+
 
 h1{
     display: flex;
