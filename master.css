@@ -29,10 +29,12 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25vh;
+    height: 26vh;
     width: 18vw;
-    margin-top: 8vh;
+    margin-top: 5vh;
     margin-bottom: 5vh;
+    max-width: auto;
+    min-witdh: auto;
 }
 
 h1{
