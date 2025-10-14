@@ -32,7 +32,7 @@ img {
     width: 80%;
     height: auto;
     margin: 5vh auto;
-    object-fit: contain; /* o 'cover' se vuoi riempire */
+    object-fit: contain; 
   }
   
 
@@ -98,6 +98,7 @@ p{
     display: flex;
     align-items: center;
     justify-items: center;
+    font-size: 2em;
 }
 
 #calcolaBtn:hover{
