@@ -25,17 +25,16 @@ body{
     padding-right: 8vw;
 }
 
-img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 26vh;
-    width: 18vw;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    max-width: auto;
-    min-witdh: auto;
+img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: auto;
+  margin: 5vh auto;
+  object-fit: contain; 
 }
+
 
 h1{
     display: flex;
