@@ -28,8 +28,8 @@ body{
 img {
   display: block;
   margin: 5vh auto;
-  width: 80%;
-  height: auto;
+  width: 60%;
+  height: 26vh;
   object-fit: contain;
 }
 
