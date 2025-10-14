@@ -30,7 +30,7 @@ img {
     align-items: center;
     justify-content: center;
     width: 80%;
-    height: auto;
+    height: 26vh;
     margin: 5vh auto;
     object-fit: contain; 
   }
